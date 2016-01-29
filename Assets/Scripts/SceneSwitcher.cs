@@ -26,6 +26,7 @@ public class SceneSwitcher : MonoBehaviour {
     }
 
     private IEnumerator FadeScreen(Color fromColor, Color toColor, float overTime) {
+        fadeScreen.enabled = true;
         float startTime = Time.time;
         while (Time.time < startTime + overTime)
         {
@@ -34,5 +35,8 @@ public class SceneSwitcher : MonoBehaviour {
             yield return null;
         }
         fadeScreen.material.color = toColor;
+        if (toColor == Color.clear) {
+            fadeScreen.enabled = false;
+        }
     }
 }
