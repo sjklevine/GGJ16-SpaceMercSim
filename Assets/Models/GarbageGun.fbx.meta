@@ -25,6 +25,9 @@ ModelImporter:
     100034: polySurface6
     100036: spoon
     100038: TinCan
+    100040: pCylinder2
+    100042: polySurface26
+    100044: TinCanMesh
     400000: bowl
     400002: //RootNode
     400004: kaleng
@@ -45,6 +48,9 @@ ModelImporter:
     400034: polySurface6
     400036: spoon
     400038: TinCan
+    400040: pCylinder2
+    400042: polySurface26
+    400044: TinCanMesh
     2300000: bowl
     2300002: kaleng_MeshPart0
     2300004: kaleng_MeshPart1
@@ -62,6 +68,8 @@ ModelImporter:
     2300028: polySurface5
     2300030: polySurface6
     2300032: spoon
+    2300034: pCylinder2
+    2300036: polySurface26
     3300000: bowl
     3300002: kaleng_MeshPart0
     3300004: kaleng_MeshPart1
@@ -79,6 +87,8 @@ ModelImporter:
     3300028: polySurface5
     3300030: polySurface6
     3300032: spoon
+    3300034: pCylinder2
+    3300036: polySurface26
     4300000: spoon
     4300002: knife
     4300004: bowl
@@ -96,6 +106,8 @@ ModelImporter:
     4300028: kaleng_MeshPart0
     4300030: kaleng_MeshPart1
     4300032: pCylinder1
+    4300034: polySurface26
+    4300036: pCylinder2
     9500000: //RootNode
   materials:
     importMaterials: 1
