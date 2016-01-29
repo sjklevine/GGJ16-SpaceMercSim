@@ -207,6 +207,14 @@ namespace UnityStandardAssets.Characters.FirstPerson
             float horizontal = CrossPlatformInputManager.GetAxis("Horizontal");
             float vertical = CrossPlatformInputManager.GetAxis("Vertical");
 
+            // SAM WAS HERE
+            if (SixenseInput.Controllers[0].Enabled) { //LEFT HAND
+                float x = SixenseInput.Controllers[0].JoystickX;
+                float y = SixenseInput.Controllers[0].JoystickY;
+                if (x != 0) { horizontal = x; }
+                if (y != 0) { vertical = y; }
+            }
+
             bool waswalking = m_IsWalking;
 
 #if !MOBILE_INPUT
