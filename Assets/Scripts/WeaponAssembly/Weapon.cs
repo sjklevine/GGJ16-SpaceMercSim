@@ -17,6 +17,8 @@ public class Weapon
 
     private EssentialPieces _canFire = EssentialPieces.None;
 
+    public bool IsWeaponComplete { get { return (_canFire & (EssentialPieces.Nozzle | EssentialPieces.Resonator | EssentialPieces.Trigger)) > EssentialPieces.None; } }
+
     public void AddWeaponPiece(WeaponPiece piece)
     {
         if (piece.Type == WeaponPiece.WeaponPieceType.Resonator)

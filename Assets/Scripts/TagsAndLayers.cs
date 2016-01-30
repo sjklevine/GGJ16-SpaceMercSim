@@ -7,6 +7,9 @@ public const string EditorOnly = "EditorOnly";
 public const string MainCamera = "MainCamera";
 public const string Player = "Player";
 public const string GameController = "GameController";
+public const string Victim = "Victim";
+public const string SF_Door = "SF_Door";
+public const string Grabbable = "Grabbable";
 }
 public static class Layers
 {
