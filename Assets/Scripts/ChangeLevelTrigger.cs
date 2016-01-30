@@ -3,11 +3,12 @@ using System.Collections;
 
 public class ChangeLevelTrigger : MonoBehaviour {
 
-    public SceneSwitcher ss;
+    public GameController gc;
 
     void OnTriggerEnter(Collider other) {
         if (other.tag == "Player") {
-            StartCoroutine(ss.ExitToNextScene());
+            StartCoroutine(gc.ExitToNextScene());
+            this.enabled = false;
         }
     }
 }
