@@ -1,0 +1,205 @@
+fileFormatVersion: 2
+guid: 39a90a73fdbeb4a41b108fd96bb817e0
+timeCreated: 1454185659
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Area
+    100002: Area.001
+    100004: BezierCircle
+    100006: Camera
+    100008: Cube
+    100010: Cube.002
+    100012: Cube.003
+    100014: Cube.005
+    100016: Cube.006
+    100018: Empty
+    100020: koldra
+    100022: Lamp
+    100024: //RootNode
+    100026: Plane
+    100028: Plane.001
+    100030: Plane.002
+    100032: Plane.003
+    100034: Plane.006
+    100036: Plane.007
+    100038: Plane.008
+    100040: Plane.009
+    100042: Plane.010
+    100044: Plane.011
+    100046: Plane.012
+    100048: zaglowek_high
+    100050: zaglowek_high_MeshPart0
+    100052: zaglowek_high_MeshPart1
+    100054: zaglowek_high_MeshPart2
+    100056: zaglowek_high_MeshPart3
+    100058: zaglowek_high_MeshPart4
+    100060: zaglowek_low
+    400000: Area
+    400002: Area.001
+    400004: BezierCircle
+    400006: Camera
+    400008: Cube
+    400010: Cube.002
+    400012: Cube.003
+    400014: Cube.005
+    400016: Cube.006
+    400018: Empty
+    400020: koldra
+    400022: Lamp
+    400024: //RootNode
+    400026: Plane
+    400028: Plane.001
+    400030: Plane.002
+    400032: Plane.003
+    400034: Plane.006
+    400036: Plane.007
+    400038: Plane.008
+    400040: Plane.009
+    400042: Plane.010
+    400044: Plane.011
+    400046: Plane.012
+    400048: zaglowek_high
+    400050: zaglowek_high_MeshPart0
+    400052: zaglowek_high_MeshPart1
+    400054: zaglowek_high_MeshPart2
+    400056: zaglowek_high_MeshPart3
+    400058: zaglowek_high_MeshPart4
+    400060: zaglowek_low
+    2300000: BezierCircle
+    2300002: Cube
+    2300004: Cube.002
+    2300006: Cube.003
+    2300008: Cube.005
+    2300010: Cube.006
+    2300012: koldra
+    2300014: Plane
+    2300016: Plane.001
+    2300018: Plane.002
+    2300020: Plane.003
+    2300022: Plane.006
+    2300024: Plane.007
+    2300026: Plane.008
+    2300028: Plane.009
+    2300030: Plane.010
+    2300032: Plane.011
+    2300034: Plane.012
+    2300036: zaglowek_high_MeshPart0
+    2300038: zaglowek_high_MeshPart1
+    2300040: zaglowek_high_MeshPart2
+    2300042: zaglowek_high_MeshPart3
+    2300044: zaglowek_high_MeshPart4
+    2300046: zaglowek_low
+    3300000: BezierCircle
+    3300002: Cube
+    3300004: Cube.002
+    3300006: Cube.003
+    3300008: Cube.005
+    3300010: Cube.006
+    3300012: koldra
+    3300014: Plane
+    3300016: Plane.001
+    3300018: Plane.002
+    3300020: Plane.003
+    3300022: Plane.006
+    3300024: Plane.007
+    3300026: Plane.008
+    3300028: Plane.009
+    3300030: Plane.010
+    3300032: Plane.011
+    3300034: Plane.012
+    3300036: zaglowek_high_MeshPart0
+    3300038: zaglowek_high_MeshPart1
+    3300040: zaglowek_high_MeshPart2
+    3300042: zaglowek_high_MeshPart3
+    3300044: zaglowek_high_MeshPart4
+    3300046: zaglowek_low
+    4300000: Plane.002
+    4300002: zaglowek_high_MeshPart0
+    4300004: zaglowek_high_MeshPart1
+    4300006: zaglowek_high_MeshPart2
+    4300008: zaglowek_high_MeshPart3
+    4300010: zaglowek_high_MeshPart4
+    4300012: Plane.012
+    4300014: Plane.011
+    4300016: Plane.008
+    4300018: Plane.007
+    4300020: Plane.006
+    4300022: Plane.010
+    4300024: Cube.005
+    4300026: Cube.006
+    4300028: koldra
+    4300030: Cube.003
+    4300032: zaglowek_low
+    4300034: Plane.001
+    4300036: BezierCircle
+    4300038: Plane
+    4300040: Cube.002
+    4300042: Cube
+    4300044: Plane.009
+    4300046: Plane.003
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
