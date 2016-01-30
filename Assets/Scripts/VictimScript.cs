@@ -4,11 +4,20 @@ using System.Collections;
 public class VictimScript : MonoBehaviour {
     public GameObject meatPrefab;
     public int numMeatChunks = 40;
+    public bool triggerDeath = false;
     public bool stayDead = false;
 
     public float explosionForce = 40f;
     public float explosionRadius = 5f;
 
+    void Update()
+    {
+        if (triggerDeath)
+        {
+            explode();
+            triggerDeath = false;
+        }
+    }
     public void explode() {
         // Create a ton of meat prefabs and send them out.
         for (int i = 0; i < numMeatChunks; i++)
