@@ -16,21 +16,26 @@ public class GameController : MonoBehaviour {
 
     void Start ()
     {
-        if (SceneManager.GetActiveScene().name == "ApartmentStart") {
-            if (quickStart)
-            {
-                bathroomDoorAnim.SetTrigger("triggerOpen");
+        switch (SceneManager.GetActiveScene().name) {
+            case "ApartmentStart":
+                if (quickStart) {
+                    bathroomDoorAnim.SetTrigger("triggerOpen");
+                    livingRoomDoorAnim.SetTrigger("triggerOpen");
+                    DoorScript.Open();
+                } else {
+                    StartCoroutine(StartTheGame());
+                }
+                break;
+            case "ApartmentEnd":
                 livingRoomDoorAnim.SetTrigger("triggerOpen");
                 DoorScript.Open();
-            }
-            else
-            {
-                StartCoroutine(StartTheGame());
-            }
-        } else {
-            if (!quickStart) { 
-                StartCoroutine(FadeScreen(Color.black, Color.clear, fadeInTime));
-            }
+                StartCoroutine(ReadyForBed());
+                break;
+            default:
+                if (!quickStart) { 
+                    StartCoroutine(FadeScreen(Color.black, Color.clear, fadeInTime));
+                }
+                break;
         }
     }
 	
@@ -44,6 +49,14 @@ public class GameController : MonoBehaviour {
         // Then shortly after, open the bathroom door.
         yield return new WaitForSeconds(4.0f);
         bathroomDoorAnim.SetTrigger("triggerOpen");
+    }
+
+    private IEnumerator ReadyForBed() {
+        // Start from fade, then after a short pause, show the holo!
+        yield return FadeScreen(Color.black, Color.clear, fadeInTime);
+        yield return new WaitForSeconds(1.0f);
+        holoRenderer.material.mainTexture = infoImages[0];
+        holoAnim.SetTrigger("triggerHolo");
     }
 
     public void TriggerLivingRoomOpen()
