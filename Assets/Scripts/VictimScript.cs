@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class VictimScript : MonoBehaviour {
+    public GameController gc;
     public GameObject meatPrefab;
     public int numMeatChunks = 40;
     public bool triggerDeath = false;
@@ -28,9 +29,10 @@ public class VictimScript : MonoBehaviour {
             go.GetComponent<Rigidbody>().AddExplosionForce(explosionForce, this.transform.position, explosionRadius);
         }
 
-        Debug.Log("KABOOM");
-        // TODO: Create an explosives prefab.  Detonator?
-        // TODO: Put a ton of blood on the walls by enabling a hidden gameobject.
+        // Make us see red!
+        gc.flashBloodyView();
+
+        // Put a ton of blood on the walls by enabling a hidden gameobject!
         goreHolder.SetActive(true);
 
         if (stayDead)

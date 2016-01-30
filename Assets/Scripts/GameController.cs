@@ -89,6 +89,11 @@ public class GameController : MonoBehaviour {
         }
     }
 
+    public void flashBloodyView()
+    {
+        StartCoroutine(FadeScreen(Color.red, Color.clear, 3.0f));
+    }
+
     private IEnumerator FadeScreen(Color fromColor, Color toColor, float overTime) {
         fadeScreen.enabled = true;
         float startTime = Time.time;
