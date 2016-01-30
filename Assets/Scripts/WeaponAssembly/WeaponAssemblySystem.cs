@@ -1,5 +1,4 @@
-﻿using System;
-using Messaging;
+﻿using Messaging;
 using UnityEngine;
 
 /// <summary>
@@ -47,8 +46,8 @@ public class WeaponAssemblySystem : MonoBehaviour
 
     private void OnNewGun(AcquiredWeaponMessage obj)
     {
-        Destroy(_currentlyGrabbedItems[0].gameObject);
-        Destroy(_currentlyGrabbedItems[1].gameObject);
+        Destroy((_currentlyGrabbedItems[0] as WeaponPiece).gameObject);
+        Destroy((_currentlyGrabbedItems[1] as WeaponPiece).gameObject);
 
         _currentlyGrabbedItems[0] = null;
         _currentlyGrabbedItems[1] = null;
