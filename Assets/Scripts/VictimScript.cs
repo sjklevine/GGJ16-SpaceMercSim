@@ -10,6 +10,8 @@ public class VictimScript : MonoBehaviour {
     public float explosionForce = 40f;
     public float explosionRadius = 5f;
 
+    public GameObject goreHolder;
+
     void Update()
     {
         if (triggerDeath)
@@ -29,6 +31,8 @@ public class VictimScript : MonoBehaviour {
         Debug.Log("KABOOM");
         // TODO: Create an explosives prefab.  Detonator?
         // TODO: Put a ton of blood on the walls by enabling a hidden gameobject.
+        goreHolder.SetActive(true);
+
         if (stayDead)
         {
             GameObject.Destroy(this.gameObject);
