@@ -7,21 +7,19 @@ public class SixenseHandsController : MonoBehaviour
 
 	Vector3	m_baseOffset;
 	float 	m_sensitivity = 0.001f; // Sixense units are in mm
-	bool 	m_bInitialized;
-
-
-	// Use this for initialization
-	void Start () 
+	bool m_bInitialized;
+    bool bResetHandPosition;
+    
+    void Start()
+    {
+        m_hands = GetComponentsInChildren<SixenseHand>();
+        if (SixenseInput.actuallyInitializedForReals) { 
+            bResetHandPosition = true;
+        }
+    }
+    
+    void Update () 
 	{
-		m_hands = GetComponentsInChildren<SixenseHand>();
-	}
-
-
-	// Update is called once per frame
-	void Update () 
-	{
-		bool bResetHandPosition = false;
-
 		foreach ( SixenseHand hand in m_hands )
 		{
 			if ( IsControllerActive( hand.m_controller ) && hand.m_controller.GetButtonDown( SixenseButtons.START ) )
@@ -44,16 +42,19 @@ public class SixenseHandsController : MonoBehaviour
 			// Get the base offset assuming forward facing down the z axis of the base
 			foreach ( SixenseHand hand in m_hands )
 			{
+                if (hand.m_controller != null)
 				m_baseOffset += hand.m_controller.Position;
 			}
 
 			m_baseOffset /= 2;
 		}
-	}
+
+        bResetHandPosition = false;
+    }
 
 
-	/** Updates hand position and rotation */
-	void UpdateHand( SixenseHand hand )
+    /** Updates hand position and rotation */
+    void UpdateHand( SixenseHand hand )
 	{
 		bool bControllerActive = IsControllerActive( hand.m_controller );
 
@@ -84,6 +85,6 @@ public class SixenseHandsController : MonoBehaviour
 	/** returns true if a controller is enabled and not docked */
 	bool IsControllerActive( SixenseInput.Controller controller )
 	{
-		return ( controller != null && controller.Enabled && !controller.Docked );
+		return ( controller != null && (controller.Enabled  || m_bInitialized) && !controller.Docked );
 	}
 }

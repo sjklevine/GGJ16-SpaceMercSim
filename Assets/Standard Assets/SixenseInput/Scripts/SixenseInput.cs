@@ -233,19 +233,34 @@ public class SixenseInput : MonoBehaviour
 		NONE,
 		BIND_CONTROLLER_ONE,
 		BIND_CONTROLLER_TWO,
+        DONE
 	}
 	
 	private static Controller[] m_Controllers = new Controller[MAX_CONTROLLERS];
-	private ControllerManagerState m_ControllerManagerState = ControllerManagerState.NONE;
-	
-	/// <summary>
-	/// Initialize the sixense driver and allocate the controllers.
-	/// </summary>
-	void Start()
+	private static ControllerManagerState m_ControllerManagerState = ControllerManagerState.NONE;
+
+    public static bool actuallyInitializedForReals = false;
+    public static SixenseInput instance;
+    /// <summary> SAM WAS HERE SINGLETONING IT UP</summary>
+    void Awake()
+    {
+        if (instance)
+        {
+            Debug.Log("SixsenseInput already exists, destroying this one!");
+            GameObject.Destroy(this.gameObject);
+            return;
+        }
+        GameObject.DontDestroyOnLoad(this.gameObject);
+        instance = this;
+    }
+
+    /// Initialize the sixense driver and allocate the controllers.
+    /// </summary>
+    void Start()
 	{
 		SixensePlugin.sixenseInit();
-		
-		for ( int i = 0; i < MAX_CONTROLLERS; i++ )
+
+        for ( int i = 0; i < MAX_CONTROLLERS; i++ )
 		{
 			m_Controllers[i] = new Controller();
 		}
@@ -332,26 +347,28 @@ public class SixenseInput : MonoBehaviour
 				}
 				break;
 			case ControllerManagerState.BIND_CONTROLLER_TWO:
-				{
-					if ( numControllersBound > 1 )
-					{
-						m_ControllerManagerState = ControllerManagerState.NONE;
-					}
-					else
-					{
-						for ( int i = 0; i < MAX_CONTROLLERS; i++ )
-						{
-							if ( ( m_Controllers[i] != null ) && Controllers[i].GetButtonDown( SixenseButtons.TRIGGER ) && ( Controllers[i].Hand == SixenseHands.UNKNOWN ) )
-							{
-								Controllers[i].HandBind = SixenseHands.RIGHT;
-								SixensePlugin.sixenseAutoEnableHemisphereTracking( i );
-								m_ControllerManagerState = ControllerManagerState.NONE;
-								break;
-							}
-						}
-					}
-				}
-				break;
+                {
+                    if (numControllersBound > 1)
+                    {
+                        m_ControllerManagerState = ControllerManagerState.DONE;
+                        actuallyInitializedForReals = true;
+                    }
+                    else
+                    {
+                        for (int i = 0; i < MAX_CONTROLLERS; i++)
+                        {
+                            if ((m_Controllers[i] != null) && Controllers[i].GetButtonDown(SixenseButtons.TRIGGER) && (Controllers[i].Hand == SixenseHands.UNKNOWN))
+                            {
+                                Controllers[i].HandBind = SixenseHands.RIGHT;
+                                SixensePlugin.sixenseAutoEnableHemisphereTracking(i);
+                                m_ControllerManagerState = ControllerManagerState.DONE;
+                                actuallyInitializedForReals = true;
+                                break;
+                            }
+                        }
+                    }
+                }
+                break;
 			default:
 				break;
 			}
@@ -363,7 +380,7 @@ public class SixenseInput : MonoBehaviour
 	/// </summary>
 	void OnGUI()
 	{
-		if ( ControllerManagerEnabled && ( m_ControllerManagerState != ControllerManagerState.NONE ) )
+		if ( ControllerManagerEnabled && ( m_ControllerManagerState != ControllerManagerState.NONE && m_ControllerManagerState != ControllerManagerState.DONE ) )
 		{
 			uint boxWidth = 300;
 			uint boxHeight = 24;
