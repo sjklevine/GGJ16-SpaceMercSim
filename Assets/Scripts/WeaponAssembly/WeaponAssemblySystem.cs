@@ -84,6 +84,7 @@ public class WeaponAssemblySystem : MonoBehaviour
                 if (haveBodyCombo && haveTriggerCombo && _fullGunPrefab != null)
                 {
                     newCombo = Instantiate(_fullGunPrefab);
+                    MessageSystem.Default.Broadcast(new AcquiredWeaponMessage());
                 }
             }
 
