@@ -1,0 +1,310 @@
+fileFormatVersion: 2
+guid: d0ea7c58281d85040a8cd4e0b44041e6
+timeCreated: 1454139990
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Bar
+    100002: Bar 1
+    100004: Bar Entrance Hatch
+    100006: Bar Front
+    100008: Bar Hatch Top
+    100010: Bar Stool
+    100012: Bar Stool01
+    100014: Bar Stool02
+    100016: Bar Stool03
+    100018: Bar Top
+    100020: Bar01
+    100022: Bottle Shelf Int
+    100024: Bottle Slef
+    100026: Bottles
+    100028: Camera01
+    100030: Camera01.Target
+    100032: Club Sofa
+    100034: Club Sofa 01
+    100036: Club Sofa 1
+    100038: Club Sofa01
+    100040: Dance Floor
+    100042: Dancefloor border
+    100044: Door
+    100046: Door 1
+    100048: Door Glass
+    100050: Door01
+    100052: Drink Shelves
+    100054: Entrance desk
+    100056: floor
+    100058: legs01
+    100060: PhotometricLight01
+    100062: PhotometricLight02
+    100064: PhotometricLight03
+    100066: PhotometricLight04
+    100068: PhotometricLight05
+    100070: PhotometricLight06
+    100072: PhotometricLight07
+    100074: PhotometricLight08
+    100076: PhotometricLight09
+    100078: PhotometricLight10
+    100080: PhotometricLight11
+    100082: PhotometricLight12
+    100084: PhotometricLight14
+    100086: PhotometricLight15
+    100088: PhotometricLight16
+    100090: PhotometricLight17
+    100092: PhotometricLight18
+    100094: PhotometricLight20
+    100096: PhotometricLight21
+    100098: PhotometricLight22
+    100100: PhotometricLight23
+    100102: PhotometricLight24
+    100104: PhotometricLight25
+    100106: PhotometricLight26
+    100108: PhotometricLight27
+    100110: PhotometricLight28
+    100112: Sofa legs
+    100114: //RootNode
+    100116: Stool Seat
+    100118: Stool Seat01
+    100120: Stool Seat02
+    100122: Stool Seat03
+    100124: Stool Stan
+    100126: Stool Stan01
+    100128: Stool Stan02
+    100130: Stool Stan03
+    100132: Table
+    100134: Table 1
+    100136: Table Glass
+    100138: walls
+    100140: Welcome
+    400000: Bar
+    400002: Bar 1
+    400004: Bar Entrance Hatch
+    400006: Bar Front
+    400008: Bar Hatch Top
+    400010: Bar Stool
+    400012: Bar Stool01
+    400014: Bar Stool02
+    400016: Bar Stool03
+    400018: Bar Top
+    400020: Bar01
+    400022: Bottle Shelf Int
+    400024: Bottle Slef
+    400026: Bottles
+    400028: Camera01
+    400030: Camera01.Target
+    400032: Club Sofa
+    400034: Club Sofa 01
+    400036: Club Sofa 1
+    400038: Club Sofa01
+    400040: Dance Floor
+    400042: Dancefloor border
+    400044: Door
+    400046: Door 1
+    400048: Door Glass
+    400050: Door01
+    400052: Drink Shelves
+    400054: Entrance desk
+    400056: floor
+    400058: legs01
+    400060: PhotometricLight01
+    400062: PhotometricLight02
+    400064: PhotometricLight03
+    400066: PhotometricLight04
+    400068: PhotometricLight05
+    400070: PhotometricLight06
+    400072: PhotometricLight07
+    400074: PhotometricLight08
+    400076: PhotometricLight09
+    400078: PhotometricLight10
+    400080: PhotometricLight11
+    400082: PhotometricLight12
+    400084: PhotometricLight14
+    400086: PhotometricLight15
+    400088: PhotometricLight16
+    400090: PhotometricLight17
+    400092: PhotometricLight18
+    400094: PhotometricLight20
+    400096: PhotometricLight21
+    400098: PhotometricLight22
+    400100: PhotometricLight23
+    400102: PhotometricLight24
+    400104: PhotometricLight25
+    400106: PhotometricLight26
+    400108: PhotometricLight27
+    400110: PhotometricLight28
+    400112: Sofa legs
+    400114: //RootNode
+    400116: Stool Seat
+    400118: Stool Seat01
+    400120: Stool Seat02
+    400122: Stool Seat03
+    400124: Stool Stan
+    400126: Stool Stan01
+    400128: Stool Stan02
+    400130: Stool Stan03
+    400132: Table
+    400134: Table 1
+    400136: Table Glass
+    400138: walls
+    400140: Welcome
+    2300000: Bar 1
+    2300002: Bar Entrance Hatch
+    2300004: Bar Front
+    2300006: Bar Hatch Top
+    2300008: Bar Top
+    2300010: Bar01
+    2300012: Bottle Shelf Int
+    2300014: Bottles
+    2300016: Club Sofa 01
+    2300018: Club Sofa 1
+    2300020: Dance Floor
+    2300022: Dancefloor border
+    2300024: Door 1
+    2300026: Door Glass
+    2300028: Door01
+    2300030: Drink Shelves
+    2300032: Entrance desk
+    2300034: floor
+    2300036: legs01
+    2300038: Sofa legs
+    2300040: Stool Seat
+    2300042: Stool Seat01
+    2300044: Stool Seat02
+    2300046: Stool Seat03
+    2300048: Stool Stan
+    2300050: Stool Stan01
+    2300052: Stool Stan02
+    2300054: Stool Stan03
+    2300056: Table 1
+    2300058: Table Glass
+    2300060: walls
+    2300062: Welcome
+    3300000: Bar 1
+    3300002: Bar Entrance Hatch
+    3300004: Bar Front
+    3300006: Bar Hatch Top
+    3300008: Bar Top
+    3300010: Bar01
+    3300012: Bottle Shelf Int
+    3300014: Bottles
+    3300016: Club Sofa 01
+    3300018: Club Sofa 1
+    3300020: Dance Floor
+    3300022: Dancefloor border
+    3300024: Door 1
+    3300026: Door Glass
+    3300028: Door01
+    3300030: Drink Shelves
+    3300032: Entrance desk
+    3300034: floor
+    3300036: legs01
+    3300038: Sofa legs
+    3300040: Stool Seat
+    3300042: Stool Seat01
+    3300044: Stool Seat02
+    3300046: Stool Seat03
+    3300048: Stool Stan
+    3300050: Stool Stan01
+    3300052: Stool Stan02
+    3300054: Stool Stan03
+    3300056: Table 1
+    3300058: Table Glass
+    3300060: walls
+    3300062: Welcome
+    4300000: walls
+    4300002: Dancefloor border
+    4300004: Door Glass
+    4300006: Door
+    4300008: Door01
+    4300010: Bar01
+    4300012: Welcome
+    4300014: Dance Floor
+    4300016: floor
+    4300018: Stool Seat
+    4300020: Stool Stan
+    4300022: Stool Seat01
+    4300024: Stool Stan01
+    4300026: Stool Seat02
+    4300028: Stool Stan02
+    4300030: Stool Seat03
+    4300032: Stool Stan03
+    4300034: legs01
+    4300036: Club Sofa 01
+    4300038: Sofa legs
+    4300040: Club Sofa
+    4300042: Table Glass
+    4300044: Table
+    4300046: Bottles
+    4300048: Bottle Shelf Int
+    4300050: Drink Shelves
+    4300052: Bar Front
+    4300054: Bar Top
+    4300056: Bar
+    4300058: Bar Entrance Hatch
+    4300060: Bar Hatch Top
+    4300062: Entrance desk
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
