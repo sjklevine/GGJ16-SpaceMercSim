@@ -12,12 +12,25 @@ public class GameController : MonoBehaviour {
     public Animator livingRoomDoorAnim;
     public Texture2D[] infoImages;
 
+    public bool quickStart = true;
+
     void Start ()
     {
         if (SceneManager.GetActiveScene().name == "ApartmentStart") {
-            StartCoroutine(StartTheGame());
+            if (quickStart)
+            {
+                bathroomDoorAnim.SetTrigger("triggerOpen");
+                livingRoomDoorAnim.SetTrigger("triggerOpen");
+                DoorScript.Open();
+            }
+            else
+            {
+                StartCoroutine(StartTheGame());
+            }
         } else {
-            StartCoroutine(FadeScreen(Color.black, Color.clear, fadeInTime));
+            if (!quickStart) { 
+                StartCoroutine(FadeScreen(Color.black, Color.clear, fadeInTime));
+            }
         }
     }
 	

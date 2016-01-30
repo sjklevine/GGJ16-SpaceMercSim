@@ -4,7 +4,7 @@ using System.Collections;
 public static class DoorScript {
 
     public static void Open() {
-        Debug.Log("OPENING");
+        //Debug.Log("OPENING");
 
         GameObject thedoor = GameObject.FindWithTag("SF_Door");
         thedoor.GetComponent<Animation>().Play("open");
