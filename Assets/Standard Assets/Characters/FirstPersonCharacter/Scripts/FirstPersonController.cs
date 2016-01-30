@@ -65,7 +65,15 @@ namespace UnityStandardAssets.Characters.FirstPerson
             // the jump state needs to read here to make sure it is not missed
             if (!m_Jump)
             {
-                m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
+                m_Jump = CrossPlatformInputManager.GetButtonDown("Jump") || SixenseInput.Controllers[0].GetButtonDown(SixenseButtons.FOUR) || SixenseInput.Controllers[1].GetButtonDown(SixenseButtons.FOUR);
+            }
+
+            var crouching = SixenseInput.Controllers[0].GetButtonDown(SixenseButtons.TWO) || SixenseInput.Controllers[1].GetButtonDown(SixenseButtons.TWO);
+
+            if (crouching)
+            {
+                var controller = GetComponent<CharacterController>();
+                controller.height = crouching ? 0.75f : 1.5f;
             }
 
             if (!m_PreviouslyGrounded && m_CharacterController.isGrounded)
