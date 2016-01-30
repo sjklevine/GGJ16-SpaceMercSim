@@ -15,36 +15,15 @@ public class Weapon
         Resonator
     }
 
-    private List<WeaponPiece> _weaponPieces = new List<WeaponPiece>();
     private EssentialPieces _canFire = EssentialPieces.None;
 
     public void AddWeaponPiece(WeaponPiece piece)
     {
-        if (_weaponPieces.Contains(piece))
-            return;
-
-        if (piece is Resonator)
+        if (piece.Type == WeaponPiece.WeaponPieceType.Resonator)
             _canFire |= EssentialPieces.Resonator;
-        else if (piece is Nozzle)
+        else if (piece.Type == WeaponPiece.WeaponPieceType.Nozzle)
             _canFire |= EssentialPieces.Nozzle;
-        else if (piece is Trigger)
+        else if (piece.Type == WeaponPiece.WeaponPieceType.Trigger)
             _canFire |= EssentialPieces.Trigger;
-
-        _weaponPieces.Add(piece);
-
-        Debug.Log("Picked up a " + piece.GetType().Name);
-    }
-
-    public void Fire()
-    {
-        if ((_canFire & (EssentialPieces.Nozzle | EssentialPieces.Resonator | EssentialPieces.Trigger)) > EssentialPieces.None)
-        {
-            foreach (var piece in _weaponPieces)
-                piece.Fire();
-        }
-        else
-        {
-            Debug.Log("Can't Fire!");
-        }
     }
 }
