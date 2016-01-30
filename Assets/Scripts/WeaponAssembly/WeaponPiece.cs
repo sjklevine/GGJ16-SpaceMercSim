@@ -3,10 +3,16 @@ using System.Collections;
 using System;
 using Messaging;
 
-public abstract class WeaponPiece : MonoBehaviour
+public class WeaponPiece : MonoBehaviour
 {
-    public virtual void Fire()
+    public enum WeaponPieceType
     {
-        Debug.Log(this.GetType().Name + " firing!");
+        Trigger,
+        Nozzle,
+        Resonator
     }
+
+    [SerializeField]
+    private WeaponPieceType _type;
+    public WeaponPieceType Type { get { return _type; } }
 }
