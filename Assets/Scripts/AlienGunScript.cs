@@ -10,7 +10,7 @@ public class AlienGunScript : MonoBehaviour {
 
     void Update () {
         if (SixenseInput.Controllers[whichHand].Enabled) {
-            if (SixenseInput.Controllers[whichHand].GetButtonDown(SixenseButtons.JOYSTICK)) {
+            if (SixenseInput.Controllers[whichHand].GetButtonDown(SixenseButtons.TRIGGER)) {
                 fireLaser();
             }
         }
