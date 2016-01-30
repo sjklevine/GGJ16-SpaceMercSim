@@ -61,6 +61,7 @@ public class WeaponAssemblySystem : MonoBehaviour
             var hand1 = _currentlyGrabbedItems[1] as WeaponPiece;
 
             GameObject newCombo = null;
+            bool haveGun = false;
 
             // Knife and Spoon
             if (hand0.Type == WeaponPiece.WeaponPieceType.Trigger && hand1.Type == WeaponPiece.WeaponPieceType.Trigger && _triggerComboPrefab != null)
@@ -83,16 +84,20 @@ public class WeaponAssemblySystem : MonoBehaviour
 
                 if (haveBodyCombo && haveTriggerCombo && _fullGunPrefab != null)
                 {
-                    newCombo = Instantiate(_fullGunPrefab);
+                    // LAST MINUTE GUN HOLDING
+                    _fullGunPrefab.SetActive(true);
                     MessageSystem.Default.Broadcast(new AcquiredWeaponMessage());
+                    haveGun = true;
                 }
             }
 
-            if (newCombo != null)
+            if (newCombo != null || haveGun)
             {
-                var newTransform = newCombo.transform;
-                newTransform.parent = transform;
-                newTransform.localPosition = Vector3.up;
+                if (newCombo != null) { 
+                    var newTransform = newCombo.transform;
+                    newTransform.parent = transform;
+                    newTransform.localPosition = Vector3.up;
+                }
 
                 Destroy(hand0.gameObject);
                 Destroy(hand1.gameObject);

@@ -21,6 +21,7 @@ public class PalmDetectorScript : MonoBehaviour
         if (SixenseInput.Controllers[_whichHand].GetButton(SixenseButtons.TRIGGER))
             grabbing = true;
 
+        //TODO: Fix bug in which you can sometimes cling to an object if you were grabbing the frame before
         if (grabbing == false && grabbing != _grabbing && _grabbedObj != null)
         {
             //_grabbedObj.parent = _prevGrabbedParent;
