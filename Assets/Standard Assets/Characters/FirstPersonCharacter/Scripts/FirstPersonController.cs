@@ -70,7 +70,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             var crouching = SixenseInput.Controllers[0].GetButton(SixenseButtons.TWO) || SixenseInput.Controllers[1].GetButton(SixenseButtons.TWO);
             var controller = GetComponent<CharacterController>();
-            controller.height = crouching ? 0.75f : 1.5f;
+            controller.height = crouching ? 0.5f : 1.5f;
 
             if (!m_PreviouslyGrounded && m_CharacterController.isGrounded)
             {
