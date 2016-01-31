@@ -75,7 +75,7 @@ public class GameController : MonoBehaviour {
         // Start from fade, then after a short pause, show the holo!
         yield return FadeScreen(Color.black, Color.clear, fadeInTime);
         yield return new WaitForSeconds(1.0f);
-        holoRenderer.material.mainTexture = infoImages[0];
+        holoRenderer.material.mainTexture = infoImages[3];
         holoAnim.SetTrigger("triggerHolo");
     }
 
@@ -85,9 +85,6 @@ public class GameController : MonoBehaviour {
         livingRoomDoorAnim.SetTrigger("triggerOpen");
         holoRenderer.material.mainTexture = infoImages[1];
         holoAnim.SetTrigger("triggerHolo"); // "Assemble weapon" image
-
-        // Since weapon assembly doesn't quite work yet, open the exit here too!
-        DoorScript.Open();
     }
 
     public IEnumerator ExitToNextScene() {
