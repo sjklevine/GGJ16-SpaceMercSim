@@ -78,8 +78,6 @@ public class AudioManager : MonoBehaviour
             _audioSource.clip = _songs[SceneManager.GetActiveScene().buildIndex];
             _audioSource.Play();
         }
-
-        Debug.Log("Start");
     }
 
     public void FadeOut()

@@ -91,6 +91,7 @@ public class GameController : MonoBehaviour {
     }
 
     public IEnumerator ExitToNextScene() {
+        Debug.Log("EXIT TO NEXT SCENE!?!?");
         yield return FadeScreen(Color.clear, Color.black, fadeOutTime);
         switch (SceneManager.GetActiveScene().name)
         {
