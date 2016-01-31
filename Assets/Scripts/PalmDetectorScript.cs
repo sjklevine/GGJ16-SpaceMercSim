@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Messaging;
+using System;
 
 public class PalmDetectorScript : MonoBehaviour
 {
@@ -13,6 +14,25 @@ public class PalmDetectorScript : MonoBehaviour
 
     void Start()
     {
+    }
+
+    void OnEnable()
+    {
+        MessageSystem.Default.Subscribe<AcquiredWeaponComboMessage>(OnNewCombo);
+    }
+
+    void OnDisable()
+    {
+        MessageSystem.Default.Unsubscribe<AcquiredWeaponComboMessage>(OnNewCombo);
+    }
+
+    private void OnNewCombo(AcquiredWeaponComboMessage obj)
+    {
+        _grabbedObj = null;
+        _grabbing = false;
+
+        var joint = GetComponent<FixedJoint>();
+        Destroy(joint);
     }
 
     void Update()

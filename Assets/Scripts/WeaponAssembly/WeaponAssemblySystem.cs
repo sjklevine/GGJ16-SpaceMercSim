@@ -1,4 +1,5 @@
-﻿using Messaging;
+﻿using System;
+using Messaging;
 using UnityEngine;
 
 /// <summary>
@@ -31,6 +32,8 @@ public class WeaponAssemblySystem : MonoBehaviour
         MessageSystem.Default.Subscribe<PickupItemMessage>(OnPickedUpItem);
         MessageSystem.Default.Subscribe<DropItemMessage>(OnDroppedItem);
         MessageSystem.Default.Subscribe<TrySnapItemsMessage>(OnTryToSnapItems);
+        MessageSystem.Default.Subscribe<AcquiredWeaponComboMessage>(OnNewCombo);
+        MessageSystem.Default.Subscribe<AcquiredWeaponMessage>(OnNewGun);
     }
 
     void OnDisable()
@@ -38,6 +41,17 @@ public class WeaponAssemblySystem : MonoBehaviour
         MessageSystem.Default.Unsubscribe<PickupItemMessage>(OnPickedUpItem);
         MessageSystem.Default.Unsubscribe<DropItemMessage>(OnDroppedItem);
         MessageSystem.Default.Unsubscribe<TrySnapItemsMessage>(OnTryToSnapItems);
+        MessageSystem.Default.Unsubscribe<AcquiredWeaponComboMessage>(OnNewCombo);
+        MessageSystem.Default.Unsubscribe<AcquiredWeaponMessage>(OnNewGun);
+    }
+
+    private void OnNewGun(AcquiredWeaponMessage obj)
+    {
+        Destroy(_currentlyGrabbedItems[0].gameObject);
+        Destroy(_currentlyGrabbedItems[1].gameObject);
+
+        _currentlyGrabbedItems[0] = null;
+        _currentlyGrabbedItems[1] = null;
     }
 
     private void OnPickedUpItem(PickupItemMessage msg)
@@ -46,10 +60,22 @@ public class WeaponAssemblySystem : MonoBehaviour
         _currentlyGrabbedItems[msg.Hand] = msg.ItemPickedUp.GetComponent<WeaponPiece>();
     }
 
+    private void OnNewCombo(AcquiredWeaponComboMessage obj)
+    {
+        if (obj.ItemCreated != null)
+        {
+            var newTransform = obj.ItemCreated.transform;
+            newTransform.parent = transform;
+            newTransform.localPosition = Vector3.up;
+        }
+
+        OnNewGun(null);
+    }
+
     private void OnDroppedItem(DropItemMessage msg)
     {
         if (_currentlyGrabbedItems[msg.Hand] != null)
-        Debug.Log("Dropping " + _currentlyGrabbedItems[msg.Hand].name);
+            Debug.Log("Dropping " + _currentlyGrabbedItems[msg.Hand].name);
         _currentlyGrabbedItems[msg.Hand] = null;
     }
 
@@ -66,6 +92,7 @@ public class WeaponAssemblySystem : MonoBehaviour
             if (hand0.Type == WeaponPiece.WeaponPieceType.Trigger && hand1.Type == WeaponPiece.WeaponPieceType.Trigger && _triggerComboPrefab != null)
             {
                 newCombo = Instantiate(_triggerComboPrefab);
+                MessageSystem.Default.Broadcast(new AcquiredWeaponComboMessage { ItemCreated = newCombo });
             }
             else
             {
@@ -79,26 +106,14 @@ public class WeaponAssemblySystem : MonoBehaviour
                 if (haveNozzle && haveResonator && _bodyComboPrefab != null)
                 {
                     newCombo = Instantiate(_bodyComboPrefab);
+                    MessageSystem.Default.Broadcast(new AcquiredWeaponComboMessage { ItemCreated = newCombo });
                 }
 
                 if (haveBodyCombo && haveTriggerCombo && _fullGunPrefab != null)
                 {
-                    newCombo = Instantiate(_fullGunPrefab);
+                    _fullGunPrefab.SetActive(true);
                     MessageSystem.Default.Broadcast(new AcquiredWeaponMessage());
                 }
-            }
-
-            if (newCombo != null)
-            {
-                var newTransform = newCombo.transform;
-                newTransform.parent = transform;
-                newTransform.localPosition = Vector3.up;
-
-                Destroy(hand0.gameObject);
-                Destroy(hand1.gameObject);
-
-                _currentlyGrabbedItems[0] = null;
-                _currentlyGrabbedItems[1] = null;
             }
         }
     }
