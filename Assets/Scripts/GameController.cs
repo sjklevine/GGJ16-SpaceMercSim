@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using Messaging;
+using System;
 
 public class GameController : MonoBehaviour {
     public float fadeInTime = 5.0f;
@@ -38,7 +40,25 @@ public class GameController : MonoBehaviour {
                 break;
         }
     }
-	
+
+    void OnEnable()
+    {
+        MessageSystem.Default.Subscribe<AcquiredWeaponMessage>(OnAcquiredWeapon);
+    }
+
+    void OnDisable()
+    {
+        MessageSystem.Default.Unsubscribe<AcquiredWeaponMessage>(OnAcquiredWeapon);
+    }
+
+    private void OnAcquiredWeapon(AcquiredWeaponMessage obj)
+    {
+        DoorScript.Open();
+
+        holoRenderer.material.mainTexture = infoImages[2];
+        holoAnim.SetTrigger("triggerHolo");
+    }
+
     private IEnumerator StartTheGame() {
         // Start from fade, then after a short pause, show the holo!
         yield return FadeScreen(Color.black, Color.clear, fadeInTime);

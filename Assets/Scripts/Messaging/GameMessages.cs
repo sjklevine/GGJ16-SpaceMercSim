@@ -16,3 +16,5 @@ public class DropItemMessage : MessageBase
 }
 
 public class TrySnapItemsMessage : MessageBase { }
+
+public class AcquiredWeaponMessage : MessageBase { }
