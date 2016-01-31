@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Messaging;
 
 public class PalmDetectorScript : MonoBehaviour
 {
@@ -28,6 +29,8 @@ public class PalmDetectorScript : MonoBehaviour
 
             var joint = GetComponent<FixedJoint>();
             Destroy(joint);
+
+            MessageSystem.Default.Broadcast(new DropItemMessage());
         }
             _grabbing = grabbing;
     }
@@ -52,6 +55,12 @@ public class PalmDetectorScript : MonoBehaviour
             _grabbedObj = collision.transform;
             var joint = gameObject.AddComponent<FixedJoint>();
             joint.connectedBody = collision.gameObject.GetComponent<Rigidbody>();
+
+            MessageSystem.Default.Broadcast(new PickupItemMessage
+            {
+                Hand = _whichHand,
+                ItemPickedUp = _grabbedObj.gameObject
+            });
         }
     }
 }
